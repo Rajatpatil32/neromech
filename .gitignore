@@ -1,0 +1,8 @@
+node_modules
+/log/
+
+.env
+/uploads/
+./package-lock.json
+data-migration
+table_data.sql
