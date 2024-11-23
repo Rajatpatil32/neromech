@@ -166,6 +166,53 @@ const styles = {
     buttonHover: {
         backgroundColor: '#0056b3',
     },
+    // Responsive styles for different screen sizes
+    '@media (max-width: 768px)': {
+        page: {
+            padding: '3rem 1.5rem',
+        },
+        heading: {
+            fontSize: '2rem',
+        },
+        subHeading: {
+            fontSize: '1rem',
+        },
+        formContainer: {
+            padding: '1.5rem',
+        },
+        input: {
+            padding: '0.5rem',
+        },
+        textarea: {
+            padding: '0.5rem',
+        },
+        button: {
+            padding: '0.5rem 1rem',
+        },
+    },
+    '@media (max-width: 480px)': {
+        page: {
+            padding: '2rem 1rem',
+        },
+        heading: {
+            fontSize: '1.8rem',
+        },
+        subHeading: {
+            fontSize: '0.9rem',
+        },
+        formContainer: {
+            padding: '1rem',
+        },
+        input: {
+            padding: '0.5rem',
+        },
+        textarea: {
+            padding: '0.5rem',
+        },
+        button: {
+            padding: '0.5rem 1rem',
+        },
+    },
 };
 
 export default ContactTab;

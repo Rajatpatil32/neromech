@@ -27,8 +27,7 @@ const ProductPage = () => {
         <section style={styles.page}>
             <h1 style={styles.heading}>Our Robotics Portfolio</h1>
             <p style={styles.subHeading}>
-                Discover our range of robotics solutions, designed to revolutionize your
-                industry. Explore the features and benefits of each product below.
+                Discover our range of robotics solutions, designed to revolutionize your industry. Explore the features and benefits of each product below.
             </p>
             <div style={styles.productList}>
                 {products.map((product, index) => (
@@ -92,6 +91,7 @@ const styles = {
         textAlign: 'center',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
         cursor: 'pointer',
+        marginBottom: '2rem',
     },
     productCardHover: {
         transform: 'translateY(-10px)',

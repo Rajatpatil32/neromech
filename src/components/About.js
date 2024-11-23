@@ -165,6 +165,70 @@ const styles = {
   contactLinkHover: {
     backgroundColor: '#0056b3',
   },
+
+  // Mobile responsiveness
+  '@media (max-width: 768px)': {
+    heroHeading: {
+      fontSize: '2.5rem',
+    },
+    heroDescription: {
+      fontSize: '1rem',
+    },
+    sectionHeading: {
+      fontSize: '1.8rem',
+    },
+    sectionText: {
+      fontSize: '1rem',
+    },
+    team: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '1.5rem',
+    },
+    teamMember: {
+      maxWidth: '90%',
+    },
+    teamImage: {
+      maxWidth: '150px',
+    },
+    valuesList: {
+      fontSize: '0.9rem',
+    },
+    contactLinks: {
+      flexDirection: 'column',
+      gap: '1rem',
+    },
+    heroImage: {
+      maxHeight: '250px',
+    },
+  },
+
+  '@media (max-width: 480px)': {
+    heroHeading: {
+      fontSize: '2rem',
+    },
+    heroDescription: {
+      fontSize: '0.9rem',
+    },
+    sectionHeading: {
+      fontSize: '1.5rem',
+    },
+    sectionText: {
+      fontSize: '0.9rem',
+    },
+    valuesList: {
+      fontSize: '0.8rem',
+    },
+    teamMember: {
+      maxWidth: '100%',
+    },
+    teamImage: {
+      maxWidth: '120px',
+    },
+    contactLink: {
+      padding: '8px 16px',
+    },
+  },
 };
 
 export default AboutPage;

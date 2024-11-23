@@ -26,8 +26,6 @@ const HeroSection = () => {
     );
 };
 
-
-
 const styles = {
     hero: {
         backgroundImage: `url(${ImgBk})`,
@@ -37,32 +35,72 @@ const styles = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '5rem',
+        flexDirection: 'column', // Ensure content stacks in a column on small screens
+        padding: '4rem 2rem',
         color: '#fff',
         minHeight: '100vh',
+        textAlign: 'center',
     },
 
     content: {
         textAlign: 'center',
-        maxWidth: '800px',
+        maxWidth: '600px', // Reduce max width for better appearance on smaller devices
+        padding: '0 20px', // Add horizontal padding for smaller screens
     },
+
     heading: {
-        fontSize: '3rem',
-        marginBottom: '20px',
+        fontSize: '2.5rem', // Adjust font size for mobile
+        marginBottom: '1.5rem',
         fontWeight: 'bold',
+        lineHeight: '1.3',
     },
+
     description: {
-        fontSize: '1.2rem',
-        marginBottom: '20px',
-        lineHeight: '1.5',
+        fontSize: '1rem', // Slightly smaller text for better readability on mobile
+        marginBottom: '1.5rem',
+        lineHeight: '1.6',
     },
+
     button: {
         color: '#000',
-        padding: '15px 30px',
+        padding: '12px 24px', // Slightly smaller for better touch usability on mobile
         border: 'none',
         borderRadius: '5px',
+        fontSize: '1rem', // Larger text for accessibility
         cursor: 'pointer',
         transition: 'background-color 0.3s ease-in-out',
+    },
+
+    // Responsive styles
+    '@media (max-width: 768px)': {
+        hero: {
+            padding: '3rem 1rem',
+        },
+        heading: {
+            fontSize: '2rem', // Reduce font size slightly for tablets
+        },
+        description: {
+            fontSize: '0.95rem', // Keep text clear and readable
+        },
+        button: {
+            padding: '10px 20px', // Slightly adjust button size
+        },
+    },
+
+    '@media (max-width: 480px)': {
+        hero: {
+            padding: '2rem 1rem',
+        },
+        heading: {
+            fontSize: '1.8rem', // Keep heading clear on mobile
+        },
+        description: {
+            fontSize: '0.9rem',
+        },
+        button: {
+            padding: '10px 18px',
+            fontSize: '0.9rem', // Adjust text size for mobile buttons
+        },
     },
 };
 
