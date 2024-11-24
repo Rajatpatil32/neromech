@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ImgBk from '../assets/robot-arm-bk.png';
+import { Link } from 'react-router-dom';
+
 
 const HeroSection = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -11,16 +13,18 @@ const HeroSection = () => {
                 <p style={styles.description}>
                     Our cutting-edge robotic solutions empower businesses to achieve new levels of efficiency, precision, and productivity. Experience the future of automation today.
                 </p>
-                <button
+                <Link
+                    to="/products"
                     style={{
                         ...styles.button,
                         backgroundColor: isHovered ? '#ccc' : '#fff',
+                        textDecoration: 'none', // Remove underline
                     }}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     Explore Our Solutions
-                </button>
+                </Link>
             </div>
         </section>
     );

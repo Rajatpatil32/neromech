@@ -27,7 +27,9 @@ const Navbar = () => {
   }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    if (isHamburgerVisible) {
+      setIsMobileMenuOpen(!isMobileMenuOpen); // Only toggle in mobile view
+    }
   };
 
   return (

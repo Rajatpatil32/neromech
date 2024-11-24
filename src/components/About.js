@@ -8,67 +8,71 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section style={styles.hero}>
         <div style={styles.heroContent}>
-          <h1 style={styles.heroHeading}>About Us</h1>
+          <h1 style={styles.heroHeading}>About XYZ Robotics</h1>
           <p style={styles.heroDescription}>
-            A brief overview of our company's mission and values. Discover how we are revolutionizing the industry.
+            Transforming industries with cutting-edge robotics and AI solutions. Discover how we drive innovation and shape the future of automation.
           </p>
-          <img src={HeroImg} alt="Hero" style={styles.heroImage} />
+          <img src={HeroImg} alt="Cutting-edge Robotics Technology" style={styles.heroImage} />
         </div>
       </section>
 
       {/* Company History */}
       <section style={styles.section}>
-        <h2 style={styles.sectionHeading}>Our History</h2>
+        <h2 style={styles.sectionHeading}>Our Journey</h2>
         <p style={styles.sectionText}>
-          We started with a vision to bring innovation to industries, and today, we are proud to be pioneers in advanced robotics.
+          Founded in 2024 in Indore, Madhya Pradesh, India, XYZ Robotics specializes in integrating advanced industrial robots and cobots from global leaders like Fanuc, ABB, Kuka, and Yaskawa. Our solutions redefine automation for applications like material handling, packaging, palletizing, sorting, and more.  
+        </p>
+        <p style={styles.sectionText}>
+          Driven by a commitment to innovation, we address industry challenges such as labor shortages, high costs, and safety risks with robotics and AI-powered automation. Our goal is to deliver smarter, safer, and more efficient operations for businesses worldwide.  
         </p>
       </section>
 
       {/* Our Team */}
       <section style={styles.section}>
-        <h2 style={styles.sectionHeading}>Our Team</h2>
+        <h2 style={styles.sectionHeading}>Meet the Team</h2>
         <div style={styles.team}>
           <div style={styles.teamMember}>
-            <img src={TeamMemberImg} alt="Team Member" style={styles.teamImage} />
+            <img src={TeamMemberImg} alt="Dedicated Team Member" style={styles.teamImage} />
             <h3 style={styles.teamName}>[Team Member Name]</h3>
-            <p style={styles.teamBio}>[Team Member's Bio]</p>
+            <p style={styles.teamBio}>[Team Member's expertise in robotics and AI integration.]</p>
           </div>
-          {/* Add more team members as needed */}
+          {/* Additional team members can be added here */}
         </div>
       </section>
 
       {/* Mission and Vision */}
       <section style={styles.section}>
-        <h2 style={styles.sectionHeading}>Our Mission and Vision</h2>
+        <h2 style={styles.sectionHeading}>Our Mission & Vision</h2>
         <p style={styles.sectionText}>
-          <strong>Mission:</strong> To empower industries with cutting-edge robotics for unparalleled efficiency and precision.
+          <strong>Mission:</strong> To revolutionize industries with robotics and AI solutions that enhance productivity, reduce costs, and ensure safety.  
         </p>
         <p style={styles.sectionText}>
-          <strong>Vision:</strong> To shape the future of automation and set new benchmarks for excellence.
+          <strong>Vision:</strong> To become a global leader in robotics and AI integration, creating intelligent systems that shape the future of industrial automation.
         </p>
       </section>
 
       {/* Core Values */}
       <section style={styles.section}>
-        <h2 style={styles.sectionHeading}>Core Values</h2>
+        <h2 style={styles.sectionHeading}>Our Core Values</h2>
         <ul style={styles.valuesList}>
           <li style={styles.valueItem}>Innovation</li>
-          <li style={styles.valueItem}>Integrity</li>
+          <li style={styles.valueItem}>Collaboration</li>
           <li style={styles.valueItem}>Customer Success</li>
+          <li style={styles.valueItem}>Sustainability</li>
         </ul>
       </section>
 
       {/* Call to Action */}
-      <section style={styles.section}>
-        <h2 style={styles.sectionHeading}>Contact Us</h2>
-        <p style={styles.sectionText}>
-          Reach out to us for inquiries, collaborations, or support.
+      <section style={styles.ctaSection}>
+        <h2 style={styles.ctaHeading}>Connect with Us</h2>
+        <p style={styles.ctaText}>
+          Interested in collaborating or learning more? Reach out to our team today!
         </p>
-        <div style={styles.contactLinks}>
-          <a href="mailto:your@email.com" style={styles.contactLink}>
+        <div style={styles.ctaLinks}>
+          <a href="mailto:your@email.com" style={styles.ctaLink}>
             Email Us
           </a>
-          <a href="tel:+1234567890" style={styles.contactLink}>
+          <a href="tel:+1234567890" style={styles.ctaLink}>
             Call Us
           </a>
         </div>
@@ -81,12 +85,13 @@ const styles = {
   aboutPage: {
     fontFamily: 'Arial, sans-serif',
     color: '#333',
-    lineHeight: '1.6',
+    lineHeight: '1.8',
   },
   hero: {
-    background: '#f4f4f4',
+    background: 'linear-gradient(to right, #002f4b, #dc4225)',
+    color: '#fff',
     textAlign: 'center',
-    padding: '3rem 2rem',
+    padding: '4rem 2rem',
   },
   heroContent: {
     maxWidth: '800px',
@@ -104,9 +109,10 @@ const styles = {
   heroImage: {
     maxWidth: '100%',
     borderRadius: '10px',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
   },
   section: {
-    padding: '2rem 2rem',
+    padding: '2rem',
     textAlign: 'center',
   },
   sectionHeading: {
@@ -116,6 +122,7 @@ const styles = {
   sectionText: {
     fontSize: '1rem',
     marginBottom: '1rem',
+    color: '#555',
   },
   team: {
     display: 'flex',
@@ -138,23 +145,35 @@ const styles = {
   },
   teamBio: {
     fontSize: '0.9rem',
+    color: '#666',
   },
   valuesList: {
     listStyle: 'none',
     padding: 0,
-    margin: 0,
   },
   valueItem: {
     fontSize: '1rem',
     marginBottom: '0.5rem',
   },
-  contactLinks: {
+  ctaSection: {
+    backgroundColor: '#f4f4f4',
+    padding: '2rem',
+    textAlign: 'center',
+  },
+  ctaHeading: {
+    fontSize: '1.8rem',
+    marginBottom: '1rem',
+  },
+  ctaText: {
+    fontSize: '1rem',
+    marginBottom: '1rem',
+  },
+  ctaLinks: {
     display: 'flex',
     justifyContent: 'center',
     gap: '1rem',
-    marginTop: '1rem',
   },
-  contactLink: {
+  ctaLink: {
     textDecoration: 'none',
     color: '#fff',
     backgroundColor: '#007BFF',
@@ -162,72 +181,8 @@ const styles = {
     borderRadius: '5px',
     transition: 'background-color 0.3s ease',
   },
-  contactLinkHover: {
+  ctaLinkHover: {
     backgroundColor: '#0056b3',
-  },
-
-  // Mobile responsiveness
-  '@media (max-width: 768px)': {
-    heroHeading: {
-      fontSize: '2.5rem',
-    },
-    heroDescription: {
-      fontSize: '1rem',
-    },
-    sectionHeading: {
-      fontSize: '1.8rem',
-    },
-    sectionText: {
-      fontSize: '1rem',
-    },
-    team: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      gap: '1.5rem',
-    },
-    teamMember: {
-      maxWidth: '90%',
-    },
-    teamImage: {
-      maxWidth: '150px',
-    },
-    valuesList: {
-      fontSize: '0.9rem',
-    },
-    contactLinks: {
-      flexDirection: 'column',
-      gap: '1rem',
-    },
-    heroImage: {
-      maxHeight: '250px',
-    },
-  },
-
-  '@media (max-width: 480px)': {
-    heroHeading: {
-      fontSize: '2rem',
-    },
-    heroDescription: {
-      fontSize: '0.9rem',
-    },
-    sectionHeading: {
-      fontSize: '1.5rem',
-    },
-    sectionText: {
-      fontSize: '0.9rem',
-    },
-    valuesList: {
-      fontSize: '0.8rem',
-    },
-    teamMember: {
-      maxWidth: '100%',
-    },
-    teamImage: {
-      maxWidth: '120px',
-    },
-    contactLink: {
-      padding: '8px 16px',
-    },
   },
 };
 

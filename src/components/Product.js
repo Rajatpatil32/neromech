@@ -1,140 +1,217 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaRobot } from 'react-icons/fa';
 
 const ProductPage = () => {
     const products = [
         {
             name: 'Yaskawa',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Yaskawa_robot.jpg',
             description:
                 'Yaskawa’s industry-leading robotics provide precision and reliability. From assembly to welding, redefine automation with Yaskawa’s versatile solutions.',
             features: ['Precision Control', 'Reliable Operation', 'Energy Efficiency'],
         },
         {
             name: 'Fanuc',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Fanuc_Robots_in_Action.jpg',
             description:
                 'Fanuc robotics bring innovative automation to your workflow. Explore scalable solutions perfect for factories of all sizes.',
             features: ['Advanced AI', 'Compact Design', 'Global Support'],
         },
         {
             name: 'ABB',
+            image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/ABB_Industrial_Robot.jpg',
             description:
                 'ABB offers cutting-edge robotics tailored for maximum productivity. Enhance your business with their high-performance systems.',
             features: ['Customizable Solutions', 'Seamless Integration', 'Smart Connectivity'],
         },
     ];
 
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    const openModal = (product) => setSelectedProduct(product);
+    const closeModal = () => setSelectedProduct(null);
+
     return (
-        <section style={styles.page}>
-            <h1 style={styles.heading}>Our Robotics Portfolio</h1>
-            <p style={styles.subHeading}>
-                Discover our range of robotics solutions, designed to revolutionize your industry. Explore the features and benefits of each product below.
+        <section
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: '4rem 2rem',
+                backgroundColor: '#f5f5f5',
+                minHeight: '100vh',
+            }}
+        >
+            <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+                Our Robotics Portfolio
+            </h1>
+            <p
+                style={{
+                    fontSize: '1.2rem',
+                    marginBottom: '3rem',
+                    color: '#666',
+                    textAlign: 'center',
+                    maxWidth: '800px',
+                }}
+            >
+                Discover our range of robotics solutions, designed to revolutionize your industry. Explore the features
+                and benefits of each product below.
             </p>
-            <div style={styles.productList}>
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '2rem',
+                    width: '100%',
+                    maxWidth: '1200px',
+                }}
+            >
                 {products.map((product, index) => (
-                    <div key={index} style={styles.productCard}>
-                        <div style={styles.icon}>
-                            <FaRobot size={50} color="#007bff" />
-                        </div>
-                        <h2 style={styles.productName}>{product.name}</h2>
-                        <p style={styles.description}>{product.description}</p>
-                        <ul style={styles.featureList}>
-                            {product.features.map((feature, i) => (
-                                <li key={i} style={styles.feature}>
+                    <div
+                        key={index}
+                        style={{
+                            backgroundColor: '#fff',
+                            padding: '1.5rem',
+                            borderRadius: '15px',
+                            boxShadow: '0 6px 20px rgba(0, 0, 0, 0.1)',
+                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                            textAlign: 'center',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => openModal(product)}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.05)';
+                            e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)';
+                            e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.1)';
+                        }}
+                    >
+                        <img
+                            src={product.image}
+                            alt={`${product.name} Image`}
+                            style={{
+                                width: '100%',
+                                height: '200px',
+                                objectFit: 'cover',
+                                borderRadius: '10px',
+                                marginBottom: '1rem',
+                            }}
+                        />
+                        <h2
+                            style={{
+                                fontSize: '1.5rem',
+                                marginBottom: '1rem',
+                                fontWeight: '600',
+                                color: '#007bff',
+                            }}
+                        >
+                            {product.name}
+                        </h2>
+                        <p style={{ fontSize: '1rem', marginBottom: '1.5rem', color: '#555' }}>
+                            {product.description}
+                        </p>
+                        <button
+                            style={{
+                                color: '#fff',
+                                backgroundColor: '#007bff',
+                                padding: '10px 20px',
+                                border: 'none',
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                                fontSize: '1rem',
+                                transition: 'transform 0.3s ease, background-color 0.3s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                                e.currentTarget.style.backgroundColor = '#0056b3';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.backgroundColor = '#007bff';
+                            }}
+                        >
+                            Learn More
+                        </button>
+                    </div>
+                ))}
+            </div>
+
+            {/* Modal */}
+            {selectedProduct && (
+                <div
+                    style={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        zIndex: 1000,
+                    }}
+                    onClick={closeModal}
+                >
+                    <div
+                        style={{
+                            backgroundColor: '#fff',
+                            padding: '2rem',
+                            borderRadius: '10px',
+                            maxWidth: '500px',
+                            width: '90%',
+                            position: 'relative',
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button
+                            style={{
+                                position: 'absolute',
+                                top: '10px',
+                                right: '10px',
+                                fontSize: '1.5rem',
+                                background: 'none',
+                                border: 'none',
+                                cursor: 'pointer',
+                            }}
+                            onClick={closeModal}
+                        >
+                            &times;
+                        </button>
+                        <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1rem' }}>
+                            {selectedProduct.name}
+                        </h2>
+                        <img
+                            src={selectedProduct.image}
+                            alt={`${selectedProduct.name} Image`}
+                            style={{
+                                width: '100%',
+                                height: '200px',
+                                objectFit: 'cover',
+                                borderRadius: '10px',
+                                marginBottom: '1rem',
+                            }}
+                        />
+                        <p style={{ fontSize: '1rem', color: '#555', marginBottom: '1.5rem' }}>
+                            {selectedProduct.description}
+                        </p>
+                        <ul style={{ listStyle: 'none', padding: 0 }}>
+                            {selectedProduct.features.map((feature, i) => (
+                                <li
+                                    key={i}
+                                    style={{ fontSize: '0.95rem', color: '#444', marginBottom: '0.5rem' }}
+                                >
                                     • {feature}
                                 </li>
                             ))}
                         </ul>
-                        <button style={styles.button}>Learn More</button>
                     </div>
-                ))}
-            </div>
+                </div>
+            )}
         </section>
     );
-};
-
-const styles = {
-    page: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '4rem 2rem',
-        backgroundColor: '#f9f9f9',
-        minHeight: '100vh',
-    },
-    heading: {
-        fontSize: '3rem',
-        marginBottom: '1rem',
-        fontWeight: 'bold',
-        color: '#333',
-        textAlign: 'center',
-    },
-    subHeading: {
-        fontSize: '1.2rem',
-        marginBottom: '2rem',
-        color: '#666',
-        textAlign: 'center',
-        maxWidth: '800px',
-        lineHeight: '1.5',
-    },
-    productList: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '2rem',
-        justifyContent: 'center',
-    },
-    productCard: {
-        backgroundColor: '#fff',
-        padding: '2rem',
-        borderRadius: '15px',
-        boxShadow: '0 6px 15px rgba(0, 0, 0, 0.1)',
-        maxWidth: '350px',
-        textAlign: 'center',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        cursor: 'pointer',
-        marginBottom: '2rem',
-    },
-    productCardHover: {
-        transform: 'translateY(-10px)',
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
-    },
-    icon: {
-        marginBottom: '1rem',
-    },
-    productName: {
-        fontSize: '1.8rem',
-        marginBottom: '1rem',
-        color: '#007bff',
-        fontWeight: '600',
-    },
-    description: {
-        fontSize: '1rem',
-        marginBottom: '1.5rem',
-        lineHeight: '1.6',
-        color: '#555',
-    },
-    featureList: {
-        listStyleType: 'none',
-        padding: 0,
-        marginBottom: '1.5rem',
-    },
-    feature: {
-        fontSize: '0.9rem',
-        color: '#444',
-        lineHeight: '1.4',
-    },
-    button: {
-        color: '#fff',
-        padding: '10px 20px',
-        backgroundColor: '#007bff',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        fontSize: '1rem',
-        transition: 'background-color 0.3s ease',
-    },
-    buttonHover: {
-        backgroundColor: '#0056b3',
-    },
 };
 
 export default ProductPage;

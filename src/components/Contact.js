@@ -16,7 +16,7 @@ const ContactTab = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // You can integrate an API call here for form submission
+        // Simulate API call (you can integrate a real API here)
         console.log(formData);
         setIsSubmitted(true);
     };
@@ -86,37 +86,43 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#f0f4f8',
         minHeight: '100vh',
+        justifyContent: 'center',
     },
     heading: {
         fontSize: '2.5rem',
-        color: '#333',
+        color: '#2C3E50',
         marginBottom: '1rem',
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        letterSpacing: '1px',
     },
     subHeading: {
         fontSize: '1.2rem',
-        color: '#555',
+        color: '#7F8C8D',
         textAlign: 'center',
         marginBottom: '2rem',
         lineHeight: '1.5',
         maxWidth: '600px',
+        fontStyle: 'italic',
     },
     formContainer: {
         width: '100%',
-        maxWidth: '500px',
+        maxWidth: '600px',
         backgroundColor: '#fff',
         padding: '2rem',
         borderRadius: '10px',
         boxShadow: '0 6px 15px rgba(0, 0, 0, 0.1)',
+        transition: 'box-shadow 0.3s ease-in-out',
     },
     thankYouMessage: {
         fontSize: '1.2rem',
-        color: '#007bff',
+        color: '#28a745',
         textAlign: 'center',
         marginTop: '1rem',
+        fontWeight: 'bold',
     },
     form: {
         display: 'flex',
@@ -126,11 +132,12 @@ const styles = {
     inputGroup: {
         display: 'flex',
         flexDirection: 'column',
+        gap: '0.5rem',
     },
     label: {
-        marginBottom: '0.5rem',
         fontSize: '1rem',
-        color: '#333',
+        color: '#2C3E50',
+        fontWeight: '500',
     },
     input: {
         padding: '0.75rem',
@@ -138,7 +145,12 @@ const styles = {
         border: '1px solid #ddd',
         borderRadius: '5px',
         outline: 'none',
-        transition: 'border-color 0.3s ease',
+        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
+        backgroundColor: '#ecf0f1',
+    },
+    inputFocus: {
+        borderColor: '#3498db',
+        boxShadow: '0 0 5px rgba(52, 152, 219, 0.7)',
     },
     textarea: {
         padding: '0.75rem',
@@ -148,25 +160,21 @@ const styles = {
         minHeight: '150px',
         outline: 'none',
         resize: 'vertical',
-        transition: 'border-color 0.3s ease',
-    },
-    inputFocus: {
-        borderColor: '#007bff',
+        backgroundColor: '#ecf0f1',
     },
     button: {
         padding: '0.75rem 1.5rem',
         fontSize: '1rem',
         color: '#fff',
-        backgroundColor: '#007bff',
+        backgroundColor: '#3498db',
         border: 'none',
         borderRadius: '5px',
         cursor: 'pointer',
-        transition: 'background-color 0.3s ease',
+        transition: 'background-color 0.3s ease, transform 0.2s ease-in-out',
     },
     buttonHover: {
-        backgroundColor: '#0056b3',
+        backgroundColor: '#2980b9',
     },
-    // Responsive styles for different screen sizes
     '@media (max-width: 768px)': {
         page: {
             padding: '3rem 1.5rem',
