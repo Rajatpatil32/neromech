@@ -33,7 +33,17 @@ const AboutPage = () => {
         <div style={styles.team}>
           <div style={styles.teamMember}>
             <img src={TeamMemberImg} alt="Dedicated Team Member" style={styles.teamImage} />
-            <h3 style={styles.teamName}>[Team Member Name]</h3>
+            <h3 style={styles.teamName}>Rajat Patil</h3>
+            <p style={styles.teamBio}>[Team Member's expertise in robotics and AI integration.]</p>
+          </div>
+          <div style={styles.teamMember}>
+            <img src={TeamMemberImg} alt="Dedicated Team Member" style={styles.teamImage} />
+            <h3 style={styles.teamName}>Ujjwal Bhati</h3>
+            <p style={styles.teamBio}>[Team Member's expertise in robotics and AI integration.]</p>
+          </div>
+          <div style={styles.teamMember}>
+            <img src={TeamMemberImg} alt="Dedicated Team Member" style={styles.teamImage} />
+            <h3 style={styles.teamName}>Nitesh Bagora</h3>
             <p style={styles.teamBio}>[Team Member's expertise in robotics and AI integration.]</p>
           </div>
           {/* Additional team members can be added here */}
@@ -133,6 +143,7 @@ const styles = {
   teamMember: {
     maxWidth: '200px',
     textAlign: 'center',
+    padding: '50px'
   },
   teamImage: {
     width: '100%',

@@ -1,109 +1,143 @@
-import React, { useState } from 'react';
-import ImgBk from '../assets/robot-arm-bk.png';
-import { Link } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
+import ImgBk from '../assets/background.jpg';
+import RobotArmImg from '../assets/roboticArms.jpg';
+import HomeAutomationImg from '../assets/homeAutomation.jpg';
+import CobotsImg from '../assets/cobots.jpg';
 
 const HeroSection = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    useEffect(() => {
+        AOS.init({
+            duration: 1200, // Animation duration for each section
+            once: false,     // Only animate once as the user scrolls
+        });
+    }, []);
+
+    const sections = [
+        {
+            title: "Robotic Arms",
+            description: "Engineered for precision, our robotic arms excel in manufacturing, healthcare, and research. They redefine automation with capabilities ranging from material handling to delicate surgeries.",
+            imgSrc: RobotArmImg,
+            textFirst: false, // Image on the left, text on the right
+        },
+        {
+            title: "Home Automation",
+            description: "Simplify your life with smart solutions. Our home automation systems offer unparalleled convenience, security, and energy efficiency, empowering you to control your space effortlessly.",
+            imgSrc: HomeAutomationImg,
+            textFirst: true, // Text on the left, image on the right
+        },
+        {
+            title: "Cobots Technologies",
+            description: "Collaborative robots (cobots) redefine workplace automation. Safe and efficient, cobots work alongside humans, optimizing productivity without compromising safety.",
+            imgSrc: CobotsImg,
+            textFirst: false, // Image on the left, text on the right
+        },
+    ];
 
     return (
         <section style={styles.hero}>
-            <div style={styles.content}>
+            {/* Hero Content */}
+            <div style={styles.heroContent} data-aos="fade-in">
                 <h1 style={styles.heading}>Revolutionize Your Industry with Advanced Robotics</h1>
                 <p style={styles.description}>
-                    Our cutting-edge robotic solutions empower businesses to achieve new levels of efficiency, precision, and productivity. Experience the future of automation today.
+                    Experience cutting-edge robotic solutions designed to elevate your efficiency, precision, and productivity. Step into the future of automation today.
                 </p>
-                <Link
-                    to="/products"
-                    style={{
-                        ...styles.button,
-                        backgroundColor: isHovered ? '#ccc' : '#fff',
-                        textDecoration: 'none', // Remove underline
-                    }}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    Explore Our Solutions
-                </Link>
             </div>
+
+            {/* Technology Sections */}
+            {sections.map((section, index) => (
+                <div
+                    key={index}
+                    style={{
+                        ...styles.section,
+                        flexDirection: section.textFirst ? 'row-reverse' : 'row',
+                    }}
+                    data-aos="fade-up"
+                >
+                    <img src={section.imgSrc} alt={section.title} style={styles.image} />
+                    <div style={styles.textContent}>
+                        <h2 style={styles.subHeading}>{section.title}</h2>
+                        <p style={styles.sectionDescription}>{section.description}</p>
+                    </div>
+                </div>
+            ))}
         </section>
     );
 };
 
 const styles = {
     hero: {
-        backgroundImage: `url(${ImgBk})`,
+        backgroundImage: `url(${ImgBk})`, // Reapply background image
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column', // Ensure content stacks in a column on small screens
-        padding: '4rem 2rem',
         color: '#fff',
-        minHeight: '100vh',
         textAlign: 'center',
+        padding: '4rem 2rem',
+        minHeight: '150vh',
     },
 
-    content: {
-        textAlign: 'center',
-        maxWidth: '600px', // Reduce max width for better appearance on smaller devices
-        padding: '0 20px', // Add horizontal padding for smaller screens
+    heroContent: {
+        maxWidth: '600px',
+        margin: '0 auto',
     },
 
     heading: {
-        fontSize: '2.5rem', // Adjust font size for mobile
-        marginBottom: '1.5rem',
+        fontSize: '2.5rem',
+        marginBottom: '1rem',
         fontWeight: 'bold',
         lineHeight: '1.3',
     },
 
     description: {
-        fontSize: '1rem', // Slightly smaller text for better readability on mobile
-        marginBottom: '1.5rem',
+        fontSize: '1rem',
+        marginBottom: '2rem',
         lineHeight: '1.6',
     },
 
-    button: {
-        color: '#000',
-        padding: '12px 24px', // Slightly smaller for better touch usability on mobile
-        border: 'none',
-        borderRadius: '5px',
-        fontSize: '1rem', // Larger text for accessibility
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease-in-out',
+    section: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        margin: '4rem 0',
+        padding: '0 2rem',
     },
 
-    // Responsive styles
+    textContent: {
+        maxWidth: '50%',
+    },
+
+    image: {
+        width: '40%',
+        height: 'auto',
+        borderRadius: '10px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+    },
+
+    subHeading: {
+        fontSize: '1.8rem',
+        marginBottom: '1rem',
+        color: '#61dafb',
+    },
+
+    sectionDescription: {
+        fontSize: '1rem',
+        lineHeight: '1.5',
+    },
+
+    // Responsive Styles
     '@media (max-width: 768px)': {
-        hero: {
-            padding: '3rem 1rem',
+        section: {
+            flexDirection: 'column', // Stack image and text vertically
+            textAlign: 'center',
         },
-        heading: {
-            fontSize: '2rem', // Reduce font size slightly for tablets
+        textContent: {
+            maxWidth: '100%',
         },
-        description: {
-            fontSize: '0.95rem', // Keep text clear and readable
-        },
-        button: {
-            padding: '10px 20px', // Slightly adjust button size
-        },
-    },
-
-    '@media (max-width: 480px)': {
-        hero: {
-            padding: '2rem 1rem',
-        },
-        heading: {
-            fontSize: '1.8rem', // Keep heading clear on mobile
-        },
-        description: {
-            fontSize: '0.9rem',
-        },
-        button: {
-            padding: '10px 18px',
-            fontSize: '0.9rem', // Adjust text size for mobile buttons
+        image: {
+            width: '80%',
+            marginBottom: '1rem',
         },
     },
 };

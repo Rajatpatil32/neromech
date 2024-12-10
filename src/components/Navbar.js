@@ -97,10 +97,11 @@ const styles = {
     zIndex: 10,
     boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
     transition: 'background-color 0.3s ease',
+    height: '45px'
   },
   logo: {
-    width: '50px',
-    height: '50px',
+    width: '150px',
+    height: '150px',
     borderRadius: '50%',
     objectFit: 'cover',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',

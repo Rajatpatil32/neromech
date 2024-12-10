@@ -5,24 +5,54 @@ const ProductPage = () => {
     const products = [
         {
             name: 'Yaskawa',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Yaskawa_robot.jpg',
+            image: 'https://t3.ftcdn.net/jpg/05/11/53/30/240_F_511533096_bB87FSEuoX2rNUAOxkgshY943j0EVjBc.jpg',
             description:
                 'Yaskawa’s industry-leading robotics provide precision and reliability. From assembly to welding, redefine automation with Yaskawa’s versatile solutions.',
-            features: ['Precision Control', 'Reliable Operation', 'Energy Efficiency'],
+            features: [
+                "Precision Control: Ensures accurate, repeatable tasks",
+                "Reliable Operation: Delivers consistent performance",
+                "Energy Efficiency: Reduces power consumption and costs",
+                "High Durability: Built for demanding environments",
+                "Advanced Technology: Features cutting-edge innovation",
+                "Increased Productivity: Enhances operational efficiency",
+                "Reduced Downtime: Requires minimal maintenance",
+                "Eco-Friendly Solutions: Promotes sustainable practices"
+              ]
+              ,
         },
         {
             name: 'Fanuc',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Fanuc_Robots_in_Action.jpg',
+            image: 'https://t3.ftcdn.net/jpg/02/91/93/68/240_F_291936861_Jb6xsL6148AZ8UNyIP56RjMz8SpiHScR.jpg',
             description:
                 'Fanuc robotics bring innovative automation to your workflow. Explore scalable solutions perfect for factories of all sizes.',
-            features: ['Advanced AI', 'Compact Design', 'Global Support'],
+            features: [
+                "Advanced AI: Enhances automation with intelligent capabilities",
+                "Global Support: Ensures reliable service worldwide",
+                "Scalable Solutions: Adapts to factories of all sizes",
+                "Reliable Performance: Maintains high operational standards",
+                "Enhanced Productivity: Optimizes manufacturing efficiency",
+                "User-Friendly Interface: Simplifies operation and control",
+                "Versatile Applications: Suits a wide range of industries",
+                "Future-Ready Technology: Prepares for evolving needs"
+              ]
+              ,
         },
         {
             name: 'ABB',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/ABB_Industrial_Robot.jpg',
+            image: 'https://t4.ftcdn.net/jpg/10/29/54/09/360_F_1029540945_765oh0bkQM0uN4xv8in2Oiq3qY92n6JM.jpg',
             description:
                 'ABB offers cutting-edge robotics tailored for maximum productivity. Enhance your business with their high-performance systems.',
-            features: ['Customizable Solutions', 'Seamless Integration', 'Smart Connectivity'],
+            features: [
+                "Customizable Solutions: Tailored to meet specific business needs",
+                "Smart Connectivity: Enables real-time data and monitoring",
+                "Maximum Productivity: Boosts operational efficiency",
+                "High-Performance Systems: Ensures consistent output quality",
+                "Advanced Technology: Utilizes the latest robotics innovations",
+                "Reliable Operation: Designed for durability and uptime",
+                "Energy Efficiency: Reduces operational costs and waste",
+                "Global Support: Provides assistance and expertise worldwide"
+              ]
+              ,
         },
     ];
 
